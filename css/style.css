@@ -179,11 +179,7 @@ fieldset {
   background-color: transparent;
 }
 
-/* .navigation__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-} */
+
 /*ВЫЯСНИТЬ, МОЖНО ЛИ ЗАДАВАТЬ ОБЩИЕ НАСТРОЙКИ ДЛЯ ВСЕХ УЛ ИЛИ ЛУЧШЕ ПО ОТДЕЛЬНОСТИ*/
 
 .navigation__list a {
