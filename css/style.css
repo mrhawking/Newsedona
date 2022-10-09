@@ -1,0 +1,696 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Regular.woff2") format('woff2'),
+    url("../fonts/PTSans-Regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Bold.woff2") format('woff2'),
+    url("../fonts/PTSans-Bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Variables */
+
+:root {
+  --basic-black: #000000;
+  --secondary-black: #333333;
+  --basic-white: #ffffff;
+  --basic-extra-dark: #666666;
+  --basic-light: #a9a9a9;
+  /* #bdbbbs -> #a9a9a9 */
+  --basic-lighter: #ebebeb;
+  /* #e5e5e5 -> #ebebeb */
+  --basic-lightest: #f2f2f2;
+  --basic-neutral: #eeeeee;
+
+  --special-light-color: #81b3d2;
+  --special-second-light-color: #669ec0;
+  --special-third-light-color: #5496bd;
+
+  --special-dark-color: #766357;
+  --special-second-dark-color: #604e43;
+  --special-third-dark-color: #503e33;
+
+  --transparent-white: rgba(255, 255, 255, 0.3);
+  --transparent-black: rgba(0, 0, 0, 0.3);
+  --transparent-white-second: rgba(255, 255, 255, 0.9);
+}
+
+/*Global*/
+
+.page {
+  background-color: var(--basic-lightest);
+  box-sizing: border-box;
+
+  height: 100%;
+}
+
+.page__body {
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--basic-black);
+
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  /*Если картинка будет большая, то */
+  height: auto;
+  /*она не будет выходить за пределы родительского контейнера*/
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
+
+/*---------НАДО НАЙТИ, КАК ПРИМЕНЯТЬ НАСТРОЙКИ PLACEHOLDER К КОНТКРЕТНЫМ КЛАССАМЮ А ПОКА ОБЩЕЕ---------*/
+
+::-webkit-input-placeholder {
+  color: var(--basic-black);
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+::-moz-placeholder {
+  color: var(--basic-black);
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+:-ms-input-placeholder {
+  color: var(--basic-black);
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+:-moz-placeholder {
+  color: var(--basic-black);
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: var(--basic-white);
+  box-shadow: 5px 0 15px -4px var(--transparent-black), -5px 0 15px -4px var(--transparent-black);
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows:
+  min-content
+  1fr
+  min-content;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+/*Navigation*/
+
+.navigation {
+  font-weight: 700;
+  line-height: 26px;
+  background-color: transparent;
+}
+
+/* .navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+/*ВЫЯСНИТЬ, МОЖНО ЛИ ЗАДАВАТЬ ОБЩИЕ НАСТРОЙКИ ДЛЯ ВСЕХ УЛ ИЛИ ЛУЧШЕ ПО ОТДЕЛЬНОСТИ*/
+
+.navigation__list a {
+  color: var(--basic-black);
+}
+
+.navigation__list a:hover {
+  color: var(--special-light-color);
+}
+
+.navigation__list a:focus {
+  color: var(--transparent-black);
+}
+
+.navigation__current a {
+  cursor: default;
+  color: var(--special-dark-color);
+}
+
+.navigation__current a:focus,
+.navigation__current a:hover {
+  color: var(--special-dark-color);
+}
+
+/*Welcome*/
+.welcome {
+  display: grid;
+  grid-template-rows: 1fr 80px;
+  margin-bottom: 41px;
+  width: 100%;
+  height: 509px;
+  background-image: url(../img/background-main.jpg);
+  background-repeat: no-repeat;
+}
+
+.welcome__img {
+  width: 456px;
+  height: 350px;
+  align-self: end;
+  justify-self: center;
+}
+
+.welcome__border {
+  align-self: end;
+}
+
+/*Reason*/
+
+.reason {
+  margin-bottom: 58px;
+  text-align: center;
+}
+
+.reason h1 {
+  width: 470px;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.reason h2 {
+  margin-bottom: 51px;
+  padding-top: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.reason__wrapper {
+  display: grid;
+  grid-template-rows: 842px 256px;
+}
+
+.item-reason__first {
+  display: grid;
+  grid-template-rows: 256px 330px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item-reason__second {
+  grid-row: 2/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reason__list-first {
+  display: grid;
+  grid-template-rows: 586px 256px;
+}
+
+.reason__long-row {
+  color: var(--basic-white);
+  background-color: var(--special-light-color);
+}
+
+.item-reason__first .reason__long-row {
+  grid-column: 1/2;
+}
+
+.item-reason__second .reason__long-row {
+  grid-column: 3/-1;
+  /* height: 256px; */
+}
+
+.reason__img-box {
+  background-color: var(--basic-neutral);
+}
+
+.reason__img-box-first {
+  grid-column: 2/-1;
+}
+
+.reason__img-box-second {
+  grid-column: 1/3;
+}
+
+
+.reason__subtitle {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.reason__uncolored {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--basic-neutral);
+}
+
+/*Advice*/
+
+.advice {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.advice__title {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+/*Popup Search*/
+
+.popup-search {
+  width: 568px;
+  margin: 0 auto;
+}
+
+.popup-search h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 24px;
+}
+
+.popup-search__description {
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.popup-search__button {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--basic-white);
+}
+
+.button--dark {
+  background-color: var(--special-dark-color);
+}
+
+.button--dark:hover {
+  background-color: var(--special-second-dark-color);
+}
+
+.button--dark:focus {
+  color: var(--transparent-white);
+  background-color: var(--special-third-dark-color);
+}
+
+.button--light {
+  background-color: var(--special-light-color);
+}
+
+.button--light:hover {
+  background-color: var(--special-second-light-color);
+}
+
+.button--light:focus {
+  color: var(--transparent-white);
+  background-color: var(--special-third-light-color);
+}
+
+.popup-search__form {
+  font-weight: 700;
+  line-height: 26px;
+  box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.popup-input-box {
+  background-color: var(--basic-neutral);
+}
+
+.popup-search__form input {
+  border: none;
+  background-color: var(--basic-lightest);
+}
+
+.button-calendar {
+  cursor: pointer;
+}
+
+/*
+.button-calendar g:hover {
+  fill: var(--basic-black);
+} */
+/*
+.popup-input-box.button-calendar:hover .button-calendar svg g {
+  fill: var(--basic-black);
+} */
+
+
+.popup-search__form span {
+  font-weight: 700;
+  line-height: 26px;
+}
+
+/*Inner page*/
+
+/*Inner_*/
+
+.inner-page__container {
+  width: 1054px;
+  margin: 0 auto;
+}
+
+/*Search form*/
+
+.search {
+  margin-bottom: 29px;
+  background-image: url(../img/background.jpg);
+  background-color: var(--basic-extra-dark);
+  width: 100%;
+  min-height: 217px;
+  background-size: cover;
+}
+
+.search__form {
+  padding-top: 26px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.search__fieldset {
+  padding: 0;
+  color: var(--basic-white);
+}
+
+.search__fieldset legend {
+  font-weight: 700;
+  font-size: 16px
+}
+
+.search__fieldset li {
+  margin-bottom: 25px;
+}
+
+.search__fieldset li:last-child {
+  margin-bottom: 0;
+}
+
+.fieldset-structure {
+  flex-basis: 230px;
+}
+
+.fieldset-structure legend {
+  margin-bottom: 24px;
+}
+
+.fieldset-type {
+  flex-basis: 230px;
+  flex-grow: 1;
+}
+
+.fieldset-type legend {
+  margin-bottom: 24px;
+}
+
+.fieldset__wrapper {
+  flex-basis: 327px;
+}
+
+.fieldset-price legend {
+  margin-bottom: 10px;
+}
+
+.fieldset-price__input-box {
+  border: 2px solid var(--basic-white);
+}
+
+.fieldset-price__input {
+  background-color: transparent;
+  color: var(--basic-white);
+}
+
+.form-search__button {
+  /* margin-top: 15px; */
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--basic-white);
+  border: 2px solid var(--basic-white);
+  cursor: pointer;
+}
+
+.form-search__button:hover {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+/*Results*/
+
+.results__sort {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.results__found {
+  flex-basis: 143px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.results__text {
+  flex-basis: 96px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.results__item {
+  display: flex;
+  gap: 29px;
+}
+
+.results__img-box {
+  flex-basis: 135px;
+  background-color: var(--basic-neutral);
+}
+
+.results__img-box img {
+  width: 135px;
+  height: 90px;
+}
+
+.results__description {
+  flex-basis: 363px;
+  flex-grow: 1;
+}
+
+.results__subtitle a {
+  color: var(--basic-black);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.results__subtitle a:hover {
+  color: var(--special-light-color);
+}
+
+.results__subtitle a:focus {
+  color: var(--transparent-black);
+}
+
+.results__item .button {
+  color: var(--basic-white);
+  font-weight: 700;
+}
+
+.raiting {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  flex-basis: 110px;
+  text-align: center;
+  align-self: flex-end;
+  background-color: var(--basic-lightest);
+}
+
+/*Sort List*/
+
+
+.sort-list__item a {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--transparent-black);
+  border-bottom: 1px dashed var(--special-light-color);
+}
+
+.sort-list__item a:hover {
+  color: var(--special-light-color);
+}
+
+.sort-list__item a:focus {
+  color: var(--basic-black);
+  border: none;
+}
+
+.sort-list__item--current a {
+  border: none;
+  color: var(--special-light-color);
+}
+
+.sort-type {
+  flex-grow: 1;
+}
+
+.sort-direction {
+  flex-basis: 127px;
+  text-align: end;
+}
+
+/*footer*/
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 23px;
+  padding-bottom: 42px;
+}
+
+.contacts {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.footer .contacts {
+  text-align: center;
+  justify-self: end;
+  align-self: end;
+  width: 327px;
+
+}
+
+.contacts__tag {
+  margin-bottom: 9px;
+}
+
+.contacts__phone {
+  color: var(--basic-black);
+}
+
+.footer .social {
+  align-self: end;
+  text-align: center;
+
+}
+
+.social-button {
+  color: var(--basic-black);
+}
+
+.social-button:hover {
+  color: var(--special-light-color);
+}
+
+.social-button:focus {
+  color: var(--basic-light);
+}
+
+.social-button svg {
+  background-color: var(--special-light-color);
+}
+
+.footer .develope {
+  width: 327px;
+  text-align: center;
+  align-self: end;
+}
+
+.develope span {
+  line-height: 26px;
+}
+
+/*Надо будет найти более адекватный способ обращения к svg*/
+
+.develope svg path {
+  fill: var(--basic-black);
+}
+
+.develope svg path:hover {
+  fill: var(--special-light-color);
+}
+
+/* .develope svg path:focus {
+  fill: var(--basic-light);
+} */
+
+
+
+/*1. Иконка календаря и HTML academy. Разобраться, как применить стили ко всему свг элементу, а не только к отдельным паф*/
+/*:focus для этих элементов не работает. Можно ли все это реализовать с помощью JS?*/
