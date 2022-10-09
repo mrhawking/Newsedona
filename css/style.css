@@ -45,6 +45,10 @@
 
 /*Global*/
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 .page {
   background-color: var(--basic-lightest);
   box-sizing: border-box;
@@ -483,6 +487,8 @@ fieldset {
 }
 
 .fieldset-price__input-box {
+  display: flex;
+  width: 317px;
   border: 2px solid var(--basic-white);
 }
 
