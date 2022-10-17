@@ -156,6 +156,19 @@ fieldset {
 
 /*----------------------------------------------------------------------------------------------------------*/
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -170,12 +183,19 @@ fieldset {
   min-content;
 }
 
-.visually-hidden {
-  position: fixed;
-  transform: scale(0);
+/*Navigation*/
+
+.header {
+  position: relative;
 }
 
-/*Navigation*/
+.header__logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
 
 .navigation {
   font-weight: 700;
@@ -185,6 +205,32 @@ fieldset {
 
 
 /*ВЫЯСНИТЬ, МОЖНО ЛИ ЗАДАВАТЬ ОБЩИЕ НАСТРОЙКИ ДЛЯ ВСЕХ УЛ ИЛИ ЛУЧШЕ ПО ОТДЕЛЬНОСТИ*/
+
+
+.navigation__list {
+  width: 1060px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.navigation__list li {
+  width: 227px;
+  padding-left: 3px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navigation__list li:nth-child(2) {
+  margin-right: 152px;
+}
+
+.navigation__list li:nth-last-child(1) {
+  text-align: end;
+}
+
+.navigation__list li:nth-last-child(2) {
+  text-align: end;
+}
 
 .navigation__list a {
   color: var(--basic-black);
