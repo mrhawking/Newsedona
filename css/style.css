@@ -388,22 +388,21 @@ fieldset {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.advice__title {
-  padding-top: 183px;
-  margin-bottom: 25px;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 21px;
-}
-
 .advice__item {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* padding-bottom: 80px; */
   max-width: 300px;
   margin: 0 auto;
+}
+
+.advice__title {
+  padding-top: 160px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
 }
 
 .home::before {
@@ -412,7 +411,7 @@ fieldset {
   height: 72px;
   background-image: url(../img/icons/icon-house.svg);
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -423,7 +422,7 @@ fieldset {
   height: 70px;
   background-image: url(../img/icons/icon-food.svg);
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -434,7 +433,7 @@ fieldset {
   height: 77px;
   background-image: url(../img/icons/icon-present.svg);
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -797,50 +796,57 @@ fieldset {
 .footer .social {
   align-self: end;
   text-align: center;
+}
 
+.social__list {
+  display: flex;
+  width: 150px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .social-button {
-  color: var(--basic-black);
-}
-
-.social-button:hover {
-  color: var(--special-light-color);
-}
-
-.social-button:focus {
-  color: var(--basic-light);
-}
-
-.social-button svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 48px;
   background-color: var(--special-light-color);
 }
 
+.social-button:hover {
+  background-color: var(--special-second-light-color);
+}
+
+.social-button:focus {
+  background-color: var(--special-third-light-color);
+}
+
+.social-button:focus path {
+  fill-opacity: 0.3;
+  /* fill: var(--transparent-white); */
+}
+
 .footer .develope {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 327px;
-  text-align: center;
   align-self: end;
 }
 
 .develope span {
   line-height: 26px;
+  margin-right: 15px;
 }
 
-/*Надо будет найти более адекватный способ обращения к svg*/
-
-.develope svg path {
-  fill: var(--basic-black);
-}
-
-.develope svg path:hover {
+.develope a:hover path {
   fill: var(--special-light-color);
 }
 
-/* .develope svg path:focus {
+.develope a:focus path {
   fill: var(--basic-light);
-} */
-
-
+}
 
 /*1. Иконка календаря и HTML academy. Разобраться, как применить стили ко всему свг элементу, а не только к отдельным паф*/
 /*:focus для этих элементов не работает. Можно ли все это реализовать с помощью JS?*/
