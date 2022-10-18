@@ -120,6 +120,10 @@ fieldset {
   border: none;
 }
 
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 /*---------НАДО НАЙТИ, КАК ПРИМЕНЯТЬ НАСТРОЙКИ PLACEHOLDER К КОНТКРЕТНЫМ КЛАССАМЮ А ПОКА ОБЩЕЕ---------*/
 
 ::-webkit-input-placeholder {
@@ -466,6 +470,21 @@ fieldset {
   font-size: 21px;
   line-height: 26px;
   color: var(--basic-white);
+  text-transform: uppercase;
+}
+
+.popup-search__open {
+  width: 568px;
+  height: 86px;
+  display: block;
+  margin: 0 auto;
+}
+
+.popup-search__action {
+  width: 458px;
+  height: 58px;
+  display: block;
+  margin: 0 auto;
 }
 
 .button--dark {
@@ -495,13 +514,14 @@ fieldset {
 }
 
 .popup-search__form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 55px;
   font-weight: 700;
   line-height: 26px;
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
-}
-
-.popup-input-box {
-  background-color: var(--basic-neutral);
+  background-color: var(--basic-white);
 }
 
 .popup-search__form input {
@@ -509,23 +529,65 @@ fieldset {
   background-color: var(--basic-lightest);
 }
 
-.button-calendar {
+.popup-search__box {
+  margin-bottom: 30px;
+}
+
+.date-box {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.date-box label {
+  align-self: center;
+}
+
+.date-box input {
+  width: 346px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.date-box button {
+  position: absolute;
+  width: 21px;
+  height: 23px;
+  padding: 0;
+  right: 9px;
+  bottom: 9px;
   cursor: pointer;
 }
 
-/*
-.button-calendar g:hover {
-  fill: var(--basic-black);
-} */
-/*
-.popup-input-box.button-calendar:hover .button-calendar svg g {
-  fill: var(--basic-black);
-} */
-
+.count-box {
+  margin-bottom: 54px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .popup-search__form span {
   font-weight: 700;
   line-height: 26px;
+}
+
+.count-box__inner {
+  display: flex;
+}
+
+.count-box span {
+  align-self: center;
+}
+
+.count-box input {
+  width: 38px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.count-button {
+  width: 38px;
+  cursor: pointer;
 }
 
 /*Inner page*/
