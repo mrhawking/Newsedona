@@ -643,6 +643,34 @@ input[type=date]::-webkit-calendar-picker-indicator {
   margin-bottom: 24px;
 }
 
+.fieldset-structure label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 40px;
+}
+
+.fieldset-structure__input + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-off.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
+.fieldset-structure__input:checked + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-on.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
 .fieldset-type {
   flex-basis: 230px;
   flex-grow: 1;
@@ -652,8 +680,39 @@ input[type=date]::-webkit-calendar-picker-indicator {
   margin-bottom: 24px;
 }
 
+.fieldset-type label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 40px;
+}
+
+.fieldset-type__input + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-off.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
+.fieldset-type__input:checked + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-on.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
 .fieldset__wrapper {
-  flex-basis: 327px;
+  flex-basis: 317px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .fieldset-price legend {
@@ -661,18 +720,49 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .fieldset-price__input-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: 84px 74px 74px 81px;
   width: 317px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  align-items: baseline;
   border: 2px solid var(--basic-white);
 }
 
+.fieldset-price__input-box label {
+  text-align: end;
+}
+
 .fieldset-price__input {
+  width: 100px;
+  padding-left: 5px;
   background-color: transparent;
   color: var(--basic-white);
 }
 
+.fieldset-price__input-box label:first-child::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 22px;
+  background-color: var(--basic-white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fieldset-price .price-range {
+  width: 317px;
+}
+
 .form-search__button {
   /* margin-top: 15px; */
+  width: 137px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  align-self: center;
   text-transform: uppercase;
   background-color: transparent;
   color: var(--basic-white);

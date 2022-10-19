@@ -39,13 +39,16 @@
           <fieldset class="search__fieldset fieldset-structure">
             <legend>Инфраструктура:</legend>
             <ul>
-              <li><input type="checkbox" name="swimming-pool" id="filter-swimming-pool" checked>
+              <li>
+                <input class="visually-hidden fieldset-structure__input" type="checkbox" name="swimming-pool" id="filter-swimming-pool" checked>
                 <label for="filter-swimming-pool">Бассейн</label>
               </li>
-              <li><input type="checkbox" name="parking" id="filter-parking">
+              <li>
+                <input class="visually-hidden fieldset-structure__input" type="checkbox" name="parking" id="filter-parking">
                 <label for="filter-parking">Парковка</label>
               </li>
-              <li><input type="checkbox" name="wi-fi" id="filter-wi-fi">
+              <li>
+                <input class="visually-hidden fieldset-structure__input" type="checkbox" name="wi-fi" id="filter-wi-fi">
                 <label for="filter-wi-fi">Wi-fi</label>
               </li>
             </ul>
@@ -53,13 +56,16 @@
           <fieldset class="search__fieldset fieldset-type">
             <legend>Тип жилья:</legend>
             <ul>
-              <li><input type="checkbox" name="hotel" id="filter-hotel" checked>
+              <li>
+                <input class="visually-hidden fieldset-type__input" type="checkbox" name="hotel" id="filter-hotel" checked>
                 <label for="filter-hotel">Гостиница</label>
               </li>
-              <li><input type="checkbox" name="motel" id="filter-motel" checked>
+              <li>
+                <input class="visually-hidden fieldset-type__input" type="checkbox" name="motel" id="filter-motel" checked>
                 <label for="filter-motel">Мотель</label>
               </li>
-              <li><input type="checkbox" name="apartments" id="filter-apartments" checked>
+              <li>
+                <input class="visually-hidden fieldset-type__input" type="checkbox" name="apartments" id="filter-apartments" checked>
                 <label for="filter-apartments">Апартаменты</label>
               </li>
             </ul>
@@ -68,8 +74,10 @@
             <fieldset class="search__fieldset fieldset-price">
               <legend>Стоимость в сутки, ₽:</legend>
               <div class="fieldset-price__input-box">
-                <label>От<input class="fieldset-price__input" type="text" value="0"></label>
-                <label>До<input class="fieldset-price__input" type="text" value="6000"></label>
+                <label for="filter-price-low">От</label>
+                <input class="fieldset-price__input" id="filter-price-low" type="text" value="0">
+                <label for="filter-price-high">До</label>
+                <input class="fieldset-price__input" id="filter-price-high" type="text" value="6000">
               </div>
               <input class="price-range" type="range" name="cost" id="filter-cost" min="0" max="6000" step="100">
             </fieldset>
