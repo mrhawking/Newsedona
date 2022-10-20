@@ -442,8 +442,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   transform: translateX(-50%);
 }
 
-
-
 /*Popup Search*/
 
 .popup-search {
@@ -539,6 +537,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
   position: relative;
 }
 
+.date-box button:hover path {
+  fill: var(--basic-black);
+}
+
+.date-box button:active path {
+  fill: var(--special-light-color);
+}
+
 .date-box label {
   align-self: center;
 }
@@ -572,6 +578,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .count-box__inner {
   display: flex;
+  position: relative;
 }
 
 .count-box span {
@@ -589,6 +596,37 @@ input[type=date]::-webkit-calendar-picker-indicator {
   width: 38px;
   cursor: pointer;
 }
+
+.count-button:hover::after {
+  background-image: url(../img/icons/plus.svg);
+}
+
+.button-minus::after {
+  content: "";
+  width: 12px;
+  height: 3px;
+  background-image: url(../img/icons/minus.svg);
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+}
+
+.button-plus::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background-image: url(../img/icons/plus.svg);
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+}
+
+
+
 
 /*Inner page*/
 
