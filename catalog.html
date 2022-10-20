@@ -75,11 +75,17 @@
               <legend>Стоимость в сутки, ₽:</legend>
               <div class="fieldset-price__input-box">
                 <label for="filter-price-low">От</label>
-                <input class="fieldset-price__input" id="filter-price-low" type="text" value="0">
+                <input class="fieldset-price__input" id="filter-price-low" type="text" name="min-price" value="0">
                 <label for="filter-price-high">До</label>
-                <input class="fieldset-price__input" id="filter-price-high" type="text" value="6000">
+                <input class="fieldset-price__input" id="filter-price-high" type="text" name="max-price" value="3000">
               </div>
-              <input class="price-range" type="range" name="cost" id="filter-cost" min="0" max="6000" step="100">
+              <div class="price-range">
+                <div class="price-range__scale">
+                  <div class="price-range__bar" style="width: 80%; margin-left: 0%"></div>
+                </div>
+                <div class="price-range__toggle price-range__toggle--min" tabindex="0" style="left:0%"></div>
+                <div class="price-range__toggle price-range__toggle--max" tabindex="0" style="left:80%"></div>
+              </div>
             </fieldset>
             <button class="form-search__button" type="submit">Показать</button>
           </div>
@@ -96,8 +102,22 @@
             <li class="sort-list__item"><a href="#">По рейтингу</a></li>
           </ul>
           <ul class="sort-list sort-direction">
-            <li class="sort-list__item"><a href="#">По возрастанию</a></li>
-            <li class="sort-list__item sort-list__item--current"><a href="#">По убыванию</a></li>
+            <li class="sort-list__item">
+              <a href="#">
+                <span class="visually-hidden">По возрастанию</span>
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 0L0 10H11L5.5 0Z" fill="#CACACA"/>
+                </svg>
+              </a>
+            </li>
+            <li class="sort-list__item sort-list__item--current">
+              <a href="#">
+                <span class="visually-hidden">По убыванию</span>
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 10L0 0H11" fill="#CACACA"/>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="results__inner">
@@ -115,7 +135,23 @@
                 <a class="button button--light" href="#">Подробнее</a>
                 <a class="button button--dark" href="#">Забронировать</a>
               </div>
-              <p class="raiting">Рейтинг: 8,5</p>
+              <div class="raiting">
+                <p class="raiting__text">Рейтинг: 8,5</p>
+                <div class="raiting__stars">
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                </div>
+              </div>
             </li>
             <li class="results__item">
               <div class="results__img-box">
@@ -130,7 +166,20 @@
                 <a class="button button--light" href="#">Подробнее</a>
                 <a class="button button--dark" href="#">Забронировать</a>
               </div>
-              <p class="raiting">Рейтинг: 8,9</p>
+              <div class="raiting">
+                <p class="raiting__text">Рейтинг: 8,9</p>
+                <div class="raiting__stars">
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                </div>
+              </div>
             </li>
             <li class="results__item">
               <div class="results__img-box">
@@ -145,7 +194,18 @@
                 <a class="button button--light" href="#">Подробнее</a>
                 <a class="button button--dark" href="#">Забронировать</a>
               </div>
-              <p class="raiting">Рейтинг: 9,2</p>
+              <div class="raiting">
+                <p class="raiting__text">Рейтинг: 9,2</p>
+                <div class="raiting__stars">
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                  <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.002 0L11.128 6.494H18.005L12.441 10.506L14.566 17L9.002 12.987L3.438 17L5.564 10.506L0 6.494H6.878L9.002 0Z" fill="#81B3D2"/>
+                  </svg>
+                </div>
+              </div>
+
             </li>
           </ul>
         </div>

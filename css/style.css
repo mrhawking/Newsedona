@@ -671,6 +671,26 @@ input[type=date]::-webkit-calendar-picker-indicator {
   left: 0;
 }
 
+.fieldset-structure__input:disabled + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-off-disabled.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
+.fieldset-structure__input:checked:disabled + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-on-disabled.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
 .fieldset-type {
   flex-basis: 230px;
   flex-grow: 1;
@@ -708,6 +728,26 @@ input[type=date]::-webkit-calendar-picker-indicator {
   left: 0;
 }
 
+.fieldset-type__input:disabled + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-off-disabled.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
+.fieldset-type__input:checked:disabled + label::before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 23px;
+  background-image: url(../img/icons/checkbox-on-disabled.svg);
+  background-repeat: no-repeat;
+  left: 0;
+}
+
 .fieldset__wrapper {
   flex-basis: 317px;
   display: flex;
@@ -725,7 +765,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   width: 317px;
   padding-top: 7px;
   padding-bottom: 8px;
-  margin-bottom: 20px;
   position: relative;
   align-items: baseline;
   border: 2px solid var(--basic-white);
@@ -753,9 +792,42 @@ input[type=date]::-webkit-calendar-picker-indicator {
   transform: translate(-50%, -50%);
 }
 
-.fieldset-price .price-range {
-  width: 317px;
+.price-range {
+  height: 42px;
+  position: relative;
+  padding-top: 20px;
 }
+
+.price-range__scale {
+  height: 2px;
+  background-color: var(--transparent-white);
+}
+
+.price-range__bar {
+  height: 2px;
+  background-color: var(--basic-white);
+}
+
+.price-range__toggle {
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  background-color: var(--basic-light);
+  border: 8px solid var(--basic-white);
+  border-radius: 50%;
+  box-shadow: 0 1px 0 1px var(--transparent-white);
+  cursor: pointer;
+}
+
+.price-range__toggle:hover {
+  transform: scale(1.1) translateY(-9px);
+}
+
 
 .form-search__button {
   /* margin-top: 15px; */
@@ -795,6 +867,22 @@ input[type=date]::-webkit-calendar-picker-indicator {
   flex-basis: 96px;
   font-size: 12px;
   line-height: 18px;
+  align-self: center;
+}
+
+.sort-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.sort-type {
+  gap: 28px;
+}
+
+.sort-type .sort-list__item {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .results__item {
@@ -873,12 +961,22 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .raiting {
-  padding-top: 3px;
-  padding-bottom: 3px;
   flex-basis: 110px;
   text-align: center;
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.raiting__text {
+  order: 1;
   background-color: var(--basic-lightest);
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.raiting__stars {
+  align-self: flex-end;
 }
 
 /*Sort List*/
@@ -912,6 +1010,26 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .sort-direction {
   flex-basis: 127px;
   text-align: end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sort-direction a {
+  border: none;
+}
+
+.sort-direction a:hover path {
+  fill: var(--basic-black);
+}
+
+.sort-direction a:focus path {
+  fill: var(--special-light-color);
+}
+
+.sort-list__item--current a path{
+  fill: var(--special-light-color);
 }
 
 /*footer*/
