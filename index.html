@@ -37,7 +37,6 @@
         <img class="welcome__border" src="img/Shape.svg" alt="" width="1200" height="57">
       </div>
       <section class="reason">
-        <!--Весь большой блок преимуществ-->
         <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
         <h2>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</h2>
         <div class="reason__wrapper">
@@ -105,7 +104,7 @@
           в Cедоне</p>
         <button class="popup-search__button popup-search__open button--dark" type="button">Поиск гостиницы в
           Седоне</button>
-        <form class="popup-search__form" action="#" method="post">
+        <form class="popup-search__form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="popup-search__box date-box">
             <label for="popup-date-in">Дата заезда:</label>
             <input id="popup-date-in" type="date" name="date-in" placeholder="24 апреля 2017">
@@ -138,24 +137,23 @@
             <span>Взрослые:</span>
             <div class="count-box__inner adult-box">
               <button class="count-button button-minus" type="button"></button>
-              <input type="text" name="adults" placeholder="2">
+              <input class="adults-input" type="text" name="adults" value="2" min = "1">
               <button class="count-button button-plus" type="button">+</button>
             </div>
             <span>Дети:</span>
             <div class="count-box__inner">
               <button class="count-button button-minus" type="button"></button>
-              <input type="text" name="adults" placeholder="0">
+              <input class="children-input" type="text" name="children" value="0" min = "0">
               <button class="count-button button-plus" type="button">+</button>
             </div>
           </div>
-          <button class="popup-search__button popup-search__action button--light" type="button">Найти</button>
+          <button class="popup-search__button popup-search__action button--light" type="submit">Найти</button>
         </form>
       </section>
     </main>
 
     <footer class="main-footer">
       <div class="map">
-        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784896.8444768344!2d-112.00751889593197!3d34.91005487627742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1666438394563!5m2!1sru!2sru" width="1199" height="594" allowfullscreen="" alt="Карта города Седона"></iframe> -->
         <img src="img/map.png" alt="Карта города Седона" width="1200" height="594">
       </div>
       <div class="footer footer--transparent">
@@ -249,6 +247,7 @@
 
     </footer>
   </div>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
